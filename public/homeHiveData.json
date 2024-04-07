@@ -1,0 +1,82 @@
+[
+      {
+        "id": 1,
+        "estate_title": "Luxury Villa with Ocean View",
+        "segment_name": "Residential",
+        "description": "Beautiful villa with panoramic ocean views, located in a prestigious neighborhood.",
+        "price": "$2,500,000",
+        "status": "sale",
+        "area": "5000 sq ft",
+        "location": "Coastal Town, California",
+        "facilities": ["Swimming Pool", "Garden", "Gym", "Home Theater"],
+        "image": "villa_image.jpg",
+        "view_property_button": "View Property"
+      },
+      {
+        "id": 2,
+        "estate_title": "Spacious Family Home",
+        "segment_name": "Residential",
+        "description": "A comfortable family home with ample space for entertainment and relaxation.",
+        "price": "$1,200,000",
+        "status": "sale",
+        "area": "3000 sq ft",
+        "location": "Suburban Area, New York",
+        "facilities": ["Backyard", "Garage", "Fireplace", "Office"],
+        "image": "family_home_image.jpg",
+        "view_property_button": "View Property"
+      },
+      {
+        "id": 3,
+        "estate_title": "Modern Apartment in City Center",
+        "segment_name": "Residential",
+        "description": "Contemporary apartment offering urban living with convenience and style.",
+        "price": "$3,000/month",
+        "status": "rent",
+        "area": "1000 sq ft",
+        "location": "Downtown, Chicago",
+        "facilities": ["Balcony", "Fitness Center", "Concierge Service"],
+        "image": "apartment_image.jpg",
+        "view_property_button": "View Property"
+      },
+      {
+        "id": 4,
+        "estate_title": "Cozy Cottage by the Lake",
+        "segment_name": "Vacation Homes",
+        "description": "Quaint cottage nestled in a peaceful lakeside setting, perfect for nature lovers.",
+        "price": "$800,000",
+        "status": "sale",
+        "area": "1500 sq ft",
+        "location": "Lake District, Vermont",
+        "facilities": ["Deck", "Boat Dock", "Fire Pit", "Garden"],
+        "image": "cottage_image.jpg",
+        "view_property_button": "View Property"
+      },
+      {
+        "id": 5,
+        "estate_title": "Mountain Retreat",
+        "segment_name": "Vacation Homes",
+        "description": "Secluded retreat in the mountains offering serenity and breathtaking views.",
+        "price": "$1,700,000",
+        "status": "sale",
+        "area": "4000 sq ft",
+        "location": "Mountain Range, Colorado",
+        "facilities": ["Hot Tub", "Hiking Trails", "Game Room", "Sauna"],
+        "image": "mountain_retreat_image.jpg",
+        "view_property_button": "View Property"
+      },
+      {
+        "id": 6,
+        "estate_title": "Urban Loft with Industrial Charm",
+        "segment_name": "Residential",
+        "description": "Industrial loft conversion in the heart of the city, perfect for urban living enthusiasts.",
+        "price": "$1,500,000",
+        "status": "sale",
+        "area": "2500 sq ft",
+        "location": "City Center, Los Angeles",
+        "facilities": ["Exposed Brick Walls", "Open Floor Plan", "Roof Deck"],
+        "image": "urban_loft_image.jpg",
+        "view_property_button": "View Property"
+      }
+    ]
+  
+  
