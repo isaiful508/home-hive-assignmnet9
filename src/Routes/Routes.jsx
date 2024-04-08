@@ -6,6 +6,7 @@ import UpdateProfile from "../Pages/UpadateProfile/UpdateProfile";
 import Login from "../Pages/Login/Login";
 import Root from "../Layouts/Root";
 import CardPropertyDetails from "../Pages/Home/SingleCard/CardPropertyDetails/CardPropertyDetails";
+import Register from "../Pages/Register/Register";
 
   const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ import CardPropertyDetails from "../Pages/Home/SingleCard/CardPropertyDetails/Ca
             return res.json();
           }),
         },
+        {
+          path:'/register',
+          element:<Register></Register>
+        }
       ]
     },
   ]);
