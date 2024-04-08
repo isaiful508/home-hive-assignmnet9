@@ -1,4 +1,5 @@
 import Navbar from "../Navbar/Navbar";
+import Cards from "./Cards/Cards";
 
 
 const Home = () => {
@@ -6,6 +7,8 @@ const Home = () => {
         <div className="container mx-auto">
           
             <h2>Thsis is home</h2>
+            <Cards></Cards>
+            
         </div>
     );
 };

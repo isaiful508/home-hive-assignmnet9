@@ -5,19 +5,6 @@ import logo from '../../assets/logo.svg'
 
 const Navbar = () => {
 
-    // const navLinks = <>
-
-    //     <li><Link to="/"
-    //      className={({isActive})=> isActive? 'text-[#23BE0A] font-bold rounded-lg border-2 p-2 border-[#23BE0A]' : 'font-medium'}
-    //     >Home</Link></li>
-    //     <li><Link className=" bg-white" to="/updateProfile">Update Profile</Link></li>
-
-
-
-    // </>
-
-
-
     return (
         <div className="navbar  container mx-auto mt-4">
             <div className="navbar-start">
