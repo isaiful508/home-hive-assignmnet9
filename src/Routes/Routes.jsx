@@ -5,6 +5,7 @@ import Home from "../Pages/Home/Home";
 import UpdateProfile from "../Pages/UpadateProfile/UpdateProfile";
 import Login from "../Pages/Login/Login";
 import Root from "../Layouts/Root";
+import CardPropertyDetails from "../Pages/Home/SingleCard/CardPropertyDetails/CardPropertyDetails";
 
   const router = createBrowserRouter([
     {
@@ -22,7 +23,17 @@ import Root from "../Layouts/Root";
         {
             path:'/login',
             element:<Login></Login>
-        }
+        },
+        {
+          path:'card_property_details/:id',
+          element:<CardPropertyDetails></CardPropertyDetails>,
+          loader:({params}) => fetch(`/homeHive.json?id=${params.id}`).then(res =>{
+            if(!res.ok){
+              throw new Error('Faild to load fetch book details');
+            }
+            return res.json();
+          }),
+        },
       ]
     },
   ]);

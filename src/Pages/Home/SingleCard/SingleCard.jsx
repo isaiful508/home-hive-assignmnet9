@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
 
 
 const SingleCard = ({card}) => {
     const {image,
          facilities,
           estate_title,
-          description
+          description,
+          id
         } = card;
 
 
@@ -22,7 +24,7 @@ const SingleCard = ({card}) => {
             }
 
                 <div className="card-actions">
-                    <button className="btn btn-primary">View Property</button>
+                    <Link to={`/card_property_details/${id}`} className="btn btn-primary">View Property</Link>
                 </div>
             </div>
         </div>

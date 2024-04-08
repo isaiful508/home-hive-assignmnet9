@@ -13,7 +13,7 @@ const Cards = () => {
             .then(data => setPropertyCards(data))
     }, []);
 
-    console.log(propertyCards);
+    // console.log(propertyCards);
 
     return (
         <div>
