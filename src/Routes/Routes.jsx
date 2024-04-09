@@ -20,7 +20,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/updateProfile',
-        element: <UpdateProfile></UpdateProfile>
+        element: <PrivateRoute>
+          <UpdateProfile></UpdateProfile>
+          </PrivateRoute>
       },
       {
         path: '/login',
@@ -28,8 +30,10 @@ const router = createBrowserRouter([
       },
       {
         path: 'card_property_details/:id',
-        
-        element: <PrivateRoute><CardPropertyDetails></CardPropertyDetails></PrivateRoute>,
+
+        element: <PrivateRoute>
+          <CardPropertyDetails></CardPropertyDetails>
+          </PrivateRoute>,
 
         loader: ({ params }) => fetch(`/homeHive.json?id=${params.id}`).then(res => {
           if (!res.ok) {
