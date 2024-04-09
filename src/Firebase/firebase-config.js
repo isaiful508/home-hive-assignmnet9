@@ -5,13 +5,14 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCT6UBLxnsoBeOU6G9v21du-Jk2pzYT44E",
-  authDomain: "homehive-assignmnet9-auth.firebaseapp.com",
-  projectId: "homehive-assignmnet9-auth",
-  storageBucket: "homehive-assignmnet9-auth.appspot.com",
-  messagingSenderId: "721686861743",
-  appId: "1:721686861743:web:0ec24b6655d94273fb815a"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VTTE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VTTE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase
