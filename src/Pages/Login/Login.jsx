@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa6";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 
 
 
 
 
 const Login = () => {
+
+    const { logIn } = useContext(AuthContext);
+
 
 
     const handleLogin = e => {
@@ -17,8 +22,16 @@ const Login = () => {
         const password = form.get('password');
         console.log(email, password);
 
+        logIn(email, password)
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+
     }
- 
+
     return (
 
         <div className="bg-[#FFF7F0] mt-10 rounded-xl container mx-auto hero-content flex-col">
@@ -53,28 +66,28 @@ const Login = () => {
 
 
                     <div className="p-2 mt-6  mb-4">
-                
-
-                <a className="flex justify-center p-4 items-center gap-5 text-lg poppins-medium border-[#FD650B] border-2 rounded-t-lg " href="">
-
-                    <FaGoogle></FaGoogle>
-                    Login with Google
-                </a>
-                <a className="flex p-4 justify-center items-center gap-5 text-lg poppins-medium border-[#FD650B]  border-b-2 rounded-b-lg border-x-2 " href="">
-
-                    <FaGithub></FaGithub>
-                    Login with Github
-                </a>
-               
 
 
-            </div>
+                        <a className="flex justify-center p-4 items-center gap-5 text-lg poppins-medium border-[#FD650B] border-2 rounded-t-lg " href="">
+
+                            <FaGoogle></FaGoogle>
+                            Login with Google
+                        </a>
+                        <a className="flex p-4 justify-center items-center gap-5 text-lg poppins-medium border-[#FD650B]  border-b-2 rounded-b-lg border-x-2 " href="">
+
+                            <FaGithub></FaGithub>
+                            Login with Github
+                        </a>
+
+
+
+                    </div>
 
                     <p className="text-center mt-2 poppins-medium">Do not Have An Account ? <Link className="text-red-500" to='/register'>Please Register</Link></p>
 
                 </div>
 
-               
+
             </form>
 
 
