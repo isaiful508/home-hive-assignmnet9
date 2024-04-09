@@ -1,9 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import userIcon from '../../assets/user.png'
 import logo from '../../assets/logo.svg'
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 
 
 const Navbar = () => {
+
+    const {user } = useContext(AuthContext);
 
     return (
         <div className="navbar  container mx-auto mt-4">
@@ -37,7 +41,15 @@ const Navbar = () => {
                 <div className="w-10  mr-2">
                     <img className="border-2 border-[#FD650B] rounded-full" src={userIcon} alt="" />
                 </div>
-                <Link to='/login' className="btn text-white bg-[#FD650B]" > Login</Link>
+
+                {
+                    user ? <Link className="btn text-white bg-[#FD650B]">Log Out</Link>
+                    :
+                    <Link to='/login' className="btn text-white bg-[#FD650B]" > Login</Link>
+                }
+
+
+               
 
             </div>
         </div>
