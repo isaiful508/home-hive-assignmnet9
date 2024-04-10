@@ -1,7 +1,8 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa6";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 
@@ -10,10 +11,14 @@ import { AuthContext } from "../../providers/AuthProviders";
 
 const Login = () => {
 
+    const { user, googleLogin, setUser } = useContext(AuthContext);
+
+    const [showPassword, setShowPassword] = useState(false);
+
     const { logIn } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate()
-    console.log('in login page location',location);
+    // console.log('in login page location',location);
 
 
 
@@ -32,13 +37,27 @@ const Login = () => {
                 console.log(result.user);
 
                 //navigate aftr login
-                navigate(location?.state? location.state : '/');
+                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 console.error(error)
             })
 
     }
+
+
+
+
+
+    //googlelogin
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(result => setUser(result.user))
+            .catch(error => console.error(error))
+
+    }
+
 
     return (
 
@@ -56,13 +75,23 @@ const Login = () => {
                     <input name="email" type="email" placeholder="Enter your email address" className="input input-bordered" required />
                 </div>
 
-                <div className="form-control">
+                <div className="form-control relative">
 
                     <label className="label poppins-semibold">
                         <span className="label-text">Password</span>
                     </label>
 
-                    <input name="password" type="password" placeholder="Enter your password" className="input input-bordered" required />
+                    <input name="password"
+                        type={showPassword ? "text" : "password"}
+                        placeholder="Enter your password"
+                        className="input input-bordered"
+                        required />
+                    <span className="absolute top-12 right-4" onClick={() => setShowPassword(!showPassword)}>
+                        {
+                            showPassword ? <FaEyeSlash className="text-xl"></FaEyeSlash> : <FaEye className="text-xl"></FaEye>
+                        }
+                    </span>
+
                     <label className="label poppins-semibold">
                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                     </label>
@@ -76,11 +105,11 @@ const Login = () => {
                     <div className="p-2 mt-6  mb-4">
 
 
-                        <a className="flex justify-center p-4 items-center gap-5 text-lg poppins-medium border-[#FD650B] border-2 rounded-t-lg " href="">
+                        <button onClick={handleGoogleLogin} className="flex justify-center p-4 items-center gap-5 text-lg poppins-medium border-[#FD650B] border-2 rounded-t-lg " >
 
                             <FaGoogle></FaGoogle>
                             Login with Google
-                        </a>
+                        </button>
                         <a className="flex p-4 justify-center items-center gap-5 text-lg poppins-medium border-[#FD650B]  border-b-2 rounded-b-lg border-x-2 " href="">
 
                             <FaGithub></FaGithub>

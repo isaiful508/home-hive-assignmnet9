@@ -1,11 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const Register = () => {
 
-    const  {createUser} = useContext(AuthContext)
+    const { createUser } = useContext(AuthContext);
+    const [passwordError, setPasswordError] = useState("");
+    // const [successRegister, setSuccessRegister] = useState();
+    const [showPassword, setShowPassword] = useState(false);
 
 
     const handleRegister = e => {
@@ -20,12 +26,40 @@ const Register = () => {
         const confirmPassword = form.get('confirmPassword');
 
 
-        console.log(name, email, photoUrl, password, confirmPassword);
+        // console.log(name, email, photoUrl, password, confirmPassword);
+
+        setPasswordError("")
+
+        if (password !== confirmPassword) {
+            setPasswordError("Password did not match !!");
+            return
+        }
+
+        if (password.length < 6) {
+            setPasswordError("Password must be at least 6 characters long.");
+            return;
+        }
+
+
+        if (!/[A-Z]/.test(password)) {
+            setPasswordError("Password must be at least one uppercase letter.");
+            return;
+        }
+
+
+        if (!/[a-z]/.test(password)) {
+            setPasswordError("Password must be at least one lowercase letter.");
+            return;
+        }
+
 
         //create user
         createUser(email, password)
-        .then(result => console.log(result.user))
-        .catch(error => console.error(error))
+            .then(result => {
+                console.log(result.user)
+                toast.success('Registration Successfully Completed');
+            })
+            .catch(error => console.error(error))
 
     }
 
@@ -43,7 +77,7 @@ const Register = () => {
                         <span className="label-text">Name</span>
                     </label>
 
-                    <input name="name" type="text" placeholder="Enter your name" className="input input-bordered"  />
+                    <input name="name" type="text" placeholder="Enter your name" className="input input-bordered" />
                 </div>
                 <div className="form-control">
 
@@ -62,26 +96,50 @@ const Register = () => {
                     <input name="photoUrl" type="text" placeholder="Photo URL" className="input input-bordered" />
                 </div>
 
-                <div className="form-control">
+                <div className="form-control relative">
 
                     <label className="label poppins-semibold">
                         <span className="label-text">Password</span>
                     </label>
 
-                    <input name="password" type="password" placeholder="Password" className="input input-bordered" required />
-                   
+                    <input name="password"
+                        type={showPassword ? "text" : "password"}
+                        placeholder="Password"
+                        className="input input-bordered"
+                        required />
+
+                    <span className="absolute top-12 right-4" onClick={() => setShowPassword(!showPassword)}>
+                        {
+                            showPassword ? <FaEyeSlash className="text-xl"></FaEyeSlash> : <FaEye className="text-xl"></FaEye>
+                        }
+                    </span>
+
 
                 </div>
-                <div className="form-control">
+                <div className="form-control relative">
 
                     <label className="label poppins-semibold">
                         <span className="label-text">Confirm Password</span>
                     </label>
 
-                    <input name="confirmPassword" type="password" placeholder="Confirm Password" className="input input-bordered" required />
-                   
+                    <input name="confirmPassword"
+                        type={showPassword ? "text" : "password"}
+                        placeholder="Confirm Password"
+                        className="input input-bordered"
+                        required />
+
+                    <span className="absolute top-12 right-4" onClick={() => setShowPassword(!showPassword)}>
+                        {
+                            showPassword ? <FaEyeSlash className="text-xl"></FaEyeSlash> : <FaEye className="text-xl"></FaEye>
+                        }
+                    </span>
+
 
                 </div>
+
+                {
+                    passwordError && <p className="text-red-700 poppins-medium">{passwordError}</p>
+                }
 
                 <div className="form-control mt-6">
                     <button className="btn  text-white bg-[#FD650B] outline-none ">Register</button>
@@ -90,7 +148,7 @@ const Register = () => {
 
                 </div>
             </form>
-
+            <Toaster position="top-center" reverseOrder={false} />
 
         </div>
     );
