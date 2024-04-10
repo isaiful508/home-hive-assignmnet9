@@ -21,7 +21,7 @@ const Register = () => {
 
         const name = form.get('name');
         const email = form.get('email');
-        const photoUrl = form.get('photoUrl');
+        const photoURL = form.get('photoUrl');
         const password = form.get('password');
         const confirmPassword = form.get('confirmPassword');
 
@@ -58,8 +58,11 @@ const Register = () => {
             .then(result => {
                 console.log(result.user)
                 toast.success('Registration Successfully Completed');
+
+                e.currentTarget.reset();
             })
             .catch(error => console.error(error))
+            toast.error('Failed to register user. Please try again.');
 
     }
 
@@ -93,7 +96,7 @@ const Register = () => {
                         <span className="label-text">Photo URL</span>
                     </label>
 
-                    <input name="photoUrl" type="text" placeholder="Photo URL" className="input input-bordered" />
+                    <input name="photoURL" type="text" placeholder="Photo URL" className="input input-bordered" />
                 </div>
 
                 <div className="form-control relative">

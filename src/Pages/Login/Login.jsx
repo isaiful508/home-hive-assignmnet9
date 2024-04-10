@@ -10,8 +10,10 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 const Login = () => {
+    
+    const {user, setUser} = useState(null);
 
-    const { user, googleLogin, setUser } = useContext(AuthContext);
+    const { googleLogin, githubLogin } = useContext(AuthContext);
 
     const [showPassword, setShowPassword] = useState(false);
 
@@ -36,7 +38,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
 
-                //navigate aftr login
+                //navigate after login
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
@@ -49,7 +51,7 @@ const Login = () => {
 
 
 
-    //googlelogin
+    //google login
 
     const handleGoogleLogin = () => {
         googleLogin()
@@ -57,6 +59,20 @@ const Login = () => {
             .catch(error => console.error(error))
 
     }
+
+    //github login
+
+    const handleGithubLogin = () => {
+        githubLogin()
+        .then(result => {
+            setUser(result.user)
+            .catch(error => {
+                console.error(error)
+            })
+        })
+    }
+
+
 
 
     return (
@@ -102,19 +118,20 @@ const Login = () => {
                     <button className="btn btn-primary text-white bg-[#FD650B] outline-none ">Login</button>
 
 
-                    <div className="p-2 mt-6  mb-4">
+                    <div className="p-2 mt-6  mb-4 flex justify-center flex-col items-center " >
 
 
-                        <button onClick={handleGoogleLogin} className="flex justify-center p-4 items-center gap-5 text-lg poppins-medium border-[#FD650B] border-2 rounded-t-lg " >
+                        <button onClick={handleGoogleLogin} className="flex justify-center p-4 items-center gap-5 text-lg poppins-medium w-full border- border-2 rounded-t-lg " >
 
                             <FaGoogle></FaGoogle>
                             Login with Google
                         </button>
-                        <a className="flex p-4 justify-center items-center gap-5 text-lg poppins-medium border-[#FD650B]  border-b-2 rounded-b-lg border-x-2 " href="">
+
+                        <button onClick={handleGithubLogin} className="flex p-4 justify-center items-center gap-5 text-lg poppins-medium w-full  border-b-2 rounded-b-lg border-x-2 " href="">
 
                             <FaGithub></FaGithub>
                             Login with Github
-                        </a>
+                        </button>
 
 
 

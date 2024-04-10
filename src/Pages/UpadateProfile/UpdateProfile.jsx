@@ -24,7 +24,7 @@ const UpdateProfile = () => {
                         <span className="label-text">Photo URL</span>
                     </label>
 
-                    <input name="photoUrl" type="text" placeholder="Photo URL" className="input input-bordered" required />
+                    <input name="photoURL" type="text" placeholder="Photo URL" className="input input-bordered" required />
                    
 
                 </div>
