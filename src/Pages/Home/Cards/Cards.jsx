@@ -17,9 +17,8 @@ const Cards = () => {
 
     return (
         <div>
-            <h2 className="text-5xl">This is cards section</h2>
-
-            <div className="grid gap-5 grid-cols-1 lg:grid-cols-3">
+            
+             <div className="grid gap-5 grid-cols-1 lg:grid-cols-3">
 
             {
                 propertyCards.map(card => <SingleCard 

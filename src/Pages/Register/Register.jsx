@@ -8,7 +8,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, logIn } = useContext(AuthContext);
     const [passwordError, setPasswordError] = useState("");
     // const [successRegister, setSuccessRegister] = useState();
     const [showPassword, setShowPassword] = useState(false);
@@ -59,10 +59,15 @@ const Register = () => {
                 console.log(result.user)
                 toast.success('Registration Successfully Completed');
 
-                e.currentTarget.reset();
             })
             .catch(error => console.error(error))
-            toast.error('Failed to register user. Please try again.');
+            // toast.error('Failed to register user. Please try again.');
+
+        
+
+
+
+
 
     }
 
