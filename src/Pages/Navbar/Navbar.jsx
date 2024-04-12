@@ -6,12 +6,12 @@ import { AuthContext } from "../../providers/AuthProviders";
 
 
 const Navbar = () => {
-    const {user, logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     const handleSignOut = () => {
         logOut()
-        .then()
-        .catch()
+            .then()
+            .catch()
     }
 
 
@@ -27,8 +27,12 @@ const Navbar = () => {
 
                         <NavLink to='/'
                             className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Home</NavLink>
+
                         <NavLink to='/updateProfile'
                             className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Update Profile</NavLink>
+                        <NavLink to='/contactUs'
+                            className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Contact Us</NavLink>
+
                     </ul>
                 </div>
                 <img src={logo} alt="" />
@@ -39,24 +43,29 @@ const Navbar = () => {
 
                     <NavLink to='/'
                         className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Home</NavLink>
-                        <NavLink to='/updateProfile'
-                            className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Update Profile</NavLink>
+                    <NavLink to='/updateProfile'
+                        className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Update Profile</NavLink>
+
+                    <NavLink to='/contactUs'
+                        className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Contact Us</NavLink>
                 </ul>
             </div>
             <div className="navbar-end">
 
                 <div className="w-10  mr-2">
-                    <img className="border-2 border-[#FD650B] rounded-full" src={userIcon} alt="" />
+                    {
+                        user ? <img className="border-2 border-[#FD650B] rounded-full" src={user.photoURL} alt="userPhoto" /> : ""
+                    }
                 </div>
 
                 {
                     user ? <button onClick={handleSignOut} className="btn text-white bg-[#FD650B]">Log Out</button>
-                    :
-                    <Link to='/login' className="btn text-white bg-[#FD650B]" > Login</Link>
+                        :
+                        <Link to='/login' className="btn text-white bg-[#FD650B]" > Login</Link>
                 }
 
 
-               
+
 
             </div>
         </div>
