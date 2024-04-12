@@ -16,9 +16,14 @@ const Cards = () => {
     // console.log(propertyCards);
 
     return (
-        <div>
+        <div className="container mx-auto">
+
+            <div className="text-center mb-8">
+        <h2 className="text-5xl">Real State</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, harum in accusamus quis consequatur ab!</p>
+            </div>
             
-             <div className="grid gap-5 grid-cols-1 lg:grid-cols-3">
+             <div className=" grid gap-5 grid-cols-1 lg:grid-cols-3">
 
             {
                 propertyCards.map(card => <SingleCard 

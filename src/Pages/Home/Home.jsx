@@ -1,14 +1,16 @@
-import Navbar from "../Navbar/Navbar";
+
 import Banner from "./Banner/Banner";
 import Cards from "./Cards/Cards";
+import Footer from "./Footer/Footer";
 
 
 const Home = () => {
     return (
-        <div className="container mx-auto">
+        <div>
           
             <Banner></Banner>
             <Cards></Cards>
+            <Footer></Footer>
             
         </div>
     );
