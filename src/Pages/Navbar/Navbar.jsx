@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import userIcon from '../../assets/user.png'
+
 import logo from '../../assets/logo.svg'
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
@@ -28,10 +28,14 @@ const Navbar = () => {
                         <NavLink to='/'
                             className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Home</NavLink>
 
-                        <NavLink to='/updateProfile'
-                            className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Update Profile</NavLink>
+
                         <NavLink to='/contactUs'
                             className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Contact Us</NavLink>
+
+                        <NavLink to='/updateProfile'
+                            className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Update Profile</NavLink>
+                        <NavLink to='/user_profile'
+                            className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>User Profile</NavLink>
 
                     </ul>
                 </div>
@@ -43,11 +47,16 @@ const Navbar = () => {
 
                     <NavLink to='/'
                         className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Home</NavLink>
-                    <NavLink to='/updateProfile'
-                        className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Update Profile</NavLink>
 
                     <NavLink to='/contactUs'
                         className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Contact Us</NavLink>
+
+                    <NavLink to='/updateProfile'
+                        className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Update Profile</NavLink>
+
+                    <NavLink to='/user_profile'
+                        className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>User Profile</NavLink>
+
                 </ul>
             </div>
             <div className="navbar-end">

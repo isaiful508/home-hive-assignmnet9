@@ -4,11 +4,12 @@ import { AuthContext } from "../../providers/AuthProviders";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 import toast, { Toaster } from 'react-hot-toast';
+import { updateProfile } from "firebase/auth";
 
 
 const Register = () => {
 
-    const { createUser, logIn } = useContext(AuthContext);
+    const { createUser, logIn, userDetails } = useContext(AuthContext);
     const [passwordError, setPasswordError] = useState("");
     // const [successRegister, setSuccessRegister] = useState();
     const [showPassword, setShowPassword] = useState(false);
@@ -21,7 +22,7 @@ const Register = () => {
 
         const name = form.get('name');
         const email = form.get('email');
-        const photoURL = form.get('photoUrl');
+        const photoURL = form.get('photoURL');
         const password = form.get('password');
         const confirmPassword = form.get('confirmPassword');
 
@@ -59,14 +60,20 @@ const Register = () => {
                 console.log(result.user)
                 toast.success('Registration Successfully Completed');
 
+                //update profile
+
+                updateProfile(result.user, {
+                    displayName: name,
+                    photoURL : photoURL
+
+                })
+                .then(() => console.log('profile update'))
+                .catch()
+
+
             })
             .catch(error => console.error(error))
-            // toast.error('Failed to register user. Please try again.');
-
-        
-
-
-
+        // toast.error('Failed to register user. Please try again.');
 
 
     }

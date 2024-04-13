@@ -31,6 +31,7 @@ const AuthProviders = ({ children }) => {
     }
 
     const logIn = (email, password) => {
+       
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     } 
@@ -63,6 +64,7 @@ const AuthProviders = ({ children }) => {
         githubLogin,
         logIn,
         logOut,
+        
         
     }
 
