@@ -3,6 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import logo from '../../assets/logo.svg'
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 
 
 const Navbar = () => {
@@ -62,9 +64,18 @@ const Navbar = () => {
             <div className="navbar-end">
 
                 <div className="w-10  mr-2">
+
+
+
+                <Tooltip id="userTooltip" place="bottom" type="dark" effect="float">
                     {
-                        user ? <img className="border-2 border-[#FD650B] rounded-full" src={user.photoURL} alt="userPhoto" /> : ""
+                        user ? <img className="border-2 border-[#FD650B] rounded-full" src={user.photoURL} alt="userPhoto" data-tip={user.displayName} /> : ""
                     }
+                </Tooltip>
+
+                    {/* {
+                        user ? <img className="border-2 border-[#FD650B] rounded-full" src={user.photoURL} alt="userPhoto" /> : ""
+                    } */}
                 </div>
 
                 {
