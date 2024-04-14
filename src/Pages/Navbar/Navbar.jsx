@@ -63,25 +63,28 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
 
-                <div className="w-10  mr-2">
+                <div  className="w-10  mr-2">
 
 
 
-                <Tooltip id="userTooltip" place="bottom" type="dark" effect="float">
-                    {
-                        user ? <img className="border-2 border-[#FD650B] rounded-full" src={user.photoURL} alt="userPhoto" data-tip={user.displayName} /> : ""
-                    }
-                </Tooltip>
-
-                    {/* {
-                        user ? <img className="border-2 border-[#FD650B] rounded-full" src={user.photoURL} alt="userPhoto" /> : ""
-                    } */}
+                   
+                        {
+                            user ? <img data-tooltip-id="userTooltip"  className="border-2 border-[#FD650B] rounded-full" src={user.photoURL} alt="userPhoto" data-tip={user.displayName} /> : ""
+                        }
+                
                 </div>
 
+                <Tooltip id="userTooltip" place="bottom">
+                    <span className="p-2 bg-[#FFF7F0] poppins-medium text-gray-800">
+                        {user ? user.displayName : ""}
+                    </span>
+                </Tooltip>
+
+
                 {
-                    user ? <button onClick={handleSignOut} className="btn text-white bg-[#FD650B]">Log Out</button>
+                    user ? <button onClick={handleSignOut} className="btn text-white bg-gradient-to-r from-[#FD650B] to-[#FFB400]">Log Out</button>
                         :
-                        <Link to='/login' className="btn text-white bg-[#FD650B]" > Login</Link>
+                        <Link to='/login' className="btn text-white bg-gradient-to-r from-[#FD650B] to-[#FFB400]" > Login</Link>
                 }
 
 

@@ -5,9 +5,9 @@ import { MdCall } from "react-icons/md";
 
 const ContactUs = () => {
     return (
-        <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center">
+        <div className="container rounded-md bg-[#FFF7F0] mx-auto flex flex-col-reverse lg:flex-row items-center">
 
-            <div className="bg-white dark:bg-gray-900">
+            <div className="  dark:bg-gray-900">
                 <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
                     <h2 className="mb-4 text-4xl tracking-tight font-bold text-center text-gray-900 dark:text-white">Contact Us</h2>
                     <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Any need you can always contact with us.Feel free ask any questions.</p>
@@ -32,7 +32,7 @@ const ContactUs = () => {
             </div>
 
 
-            <div className="mt-10 flex-shrink-0 w-1/2 text-center bg-white dark:bg-gray-800 lg:p-8">
+            <div className="mt-10 flex-shrink-0 w-1/2 text-center bg-[#FFF7F0]  dark:bg-gray-800 lg:p-8">
                
                <div>
                 <FaBuilding className="mx-auto text-4xl lg:text-5xl mb-4"></FaBuilding> 
