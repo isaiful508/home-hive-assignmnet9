@@ -20,7 +20,7 @@ const Cards = () => {
 
             <div className="text-center mb-16 mt-12">
         <h2 className="text-5xl poppins-semibold">Properties For Sale & Rent</h2>
-        <p className="poppins-regular mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, harum in accusamus quis consequatur ab!</p>
+        <p className="poppins-regular mt-4">Find your ideal property – for sale or rent. Explore our diverse listings <br /> and discover the perfect place to call home.</p>
             </div>
             
              <div className=" grid gap-5 grid-cols-1 lg:grid-cols-3">
