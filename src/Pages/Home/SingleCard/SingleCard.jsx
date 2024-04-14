@@ -7,7 +7,8 @@ const SingleCard = ({ card }) => {
         estate_title,
         price,
         id,
-        status
+        status,
+        description
     } = card;
 
 
@@ -27,9 +28,13 @@ const SingleCard = ({ card }) => {
                     <p className="text-xl poppins-regular"><span className="btn poppins-regular text-white rounded-full bg-gradient-to-r from-[#FD650B] to-[#FFB400]">{status}</span></p>
                     <p className="text-xl btn text-white poppins-regular rounded-full bg-gradient-to-r from-[#FD650B] to-[#FFB400]">{price}</p>
                 </div>
+                <p className="poppins-regular">
+                    {description}
+                </p>
+                <h3 className="text-2xl poppins-semibold">Facilities : </h3>
 
                 {
-                    facilities.map((facility, index) => <li key={index}> {facility}</li>)
+                    facilities.map((facility, index) => <li className="poppins-regular" key={index}> {facility}</li>)
                 }
 
                 <div className="card-actions">

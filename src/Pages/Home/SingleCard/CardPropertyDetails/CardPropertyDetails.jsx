@@ -17,7 +17,7 @@ const CardPropertyDetails = () => {
      
 
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl">
+        <div className="card mt-10 container mx-auto lg:card-side bg-base-100 shadow-xl">
             <figure>
                 <img src={image} alt="property" />
                 </figure>
