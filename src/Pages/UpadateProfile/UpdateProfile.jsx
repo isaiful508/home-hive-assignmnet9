@@ -1,24 +1,27 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
+import { Helmet } from "react-helmet-async";
+import toast from "react-hot-toast";
+
 
 
 
 const UpdateProfile = () => {
 
-    const { updateProfile, user } = useContext(AuthContext);
-    console.log(user)
-    const [name, setName] = useState(user.displayName || '');
-    const [photoURL, setPhotoURL] = useState(user.photoURL || '');
+    const { userUpdateProfile, user, setUser } = useContext(AuthContext);
+    
+     const [displayName, setDisplayName] = useState('');
+    const [photoURL, setPhotoURL ] = useState('');
+ 
 
-
-
-
-    const handleUpdateProfile = (e) => {
-        e.preventDefault();
-        updateProfile(name, photoURL)
+    const handleUpdateProfile = () => {
+      
+        userUpdateProfile(displayName, photoURL)
             .then(() => {
-                console.log('profile update')
+                console.log('Updated Successfully')
+                toast.success('Updated Successfully');
+                setUser({...user, displayName, photoURL})
             })
             .catch((error) => {
                 console.error(error);
@@ -28,18 +31,16 @@ const UpdateProfile = () => {
 
 
 
+     return (
+        <div className="bg-[#FFF7F0] mb-6 mt-10 rounded-xl container mx-auto hero-content flex-col">
 
-
-
-
-
-
-    return (
-        <div className="bg-[#FFF7F0] mt-10 rounded-xl container mx-auto hero-content flex-col">
+            <Helmet>
+                <title>Home Hive | Update Profile </title>
+            </Helmet>
 
             <h2 className="text-4xl mt-8   text-center poppins-bold ">Update Profile</h2>
 
-            <form onSubmit={handleUpdateProfile} className="card-body md:w-3/4 lg:1/2 mx-auto">
+            <form className="card-body md:w-3/4 lg:1/2 mx-auto">
                 <div className="form-control">
 
                     <label className="label poppins-semibold">
@@ -49,10 +50,10 @@ const UpdateProfile = () => {
                     <input
                         name="name"
                         type="text"
-                        placeholder="Upadate"
+                        placeholder="Update"
                         className="input input-bordered"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        value={displayName}
+                        onChange={(e) => setDisplayName(e.target.value)}
                         required />
                 </div>
 
@@ -75,7 +76,7 @@ const UpdateProfile = () => {
                 </div>
 
                 <div className="form-control mt-6">
-                    <button className="btn btn-primary text-white bg-[#FD650B] outline-none ">Save</button>
+                    <button onClick={handleUpdateProfile} className="btn btn-primary text-white bg-[#FD650B] outline-none ">Save</button>
 
                     <p className="text-center mt-2 poppins-medium">Do not Have An Account ? <Link className="text-red-500" to='/register'>Please Register</Link></p>
 

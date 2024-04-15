@@ -1,18 +1,23 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 import toast, { Toaster } from 'react-hot-toast';
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
 
-    const { createUser, logIn, userDetails } = useContext(AuthContext);
+    const { createUser,
+         logIn,
+          userDetails,
+           logOut  } = useContext(AuthContext);
     const [passwordError, setPasswordError] = useState("");
     // const [successRegister, setSuccessRegister] = useState();
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate()
 
 
     const handleRegister = e => {
@@ -26,8 +31,6 @@ const Register = () => {
         const password = form.get('password');
         const confirmPassword = form.get('confirmPassword');
 
-
-        // console.log(name, email, photoUrl, password, confirmPassword);
 
         setPasswordError("")
 
@@ -59,21 +62,24 @@ const Register = () => {
             .then(result => {
                 console.log(result.user)
                 toast.success('Registration Successfully');
+                logOut();
+                navigate("/login");
+
 
                 //update profile
 
                 updateProfile(result.user, {
                     displayName: name,
-                    photoURL : photoURL
+                    photoURL: photoURL
 
                 })
-                .then(() => console.log('profile update'))
-                .catch()
+                    .then(() => console.log('profile update'))
+                    .catch()
 
 
             })
             .catch(error => console.error(error))
-        // toast.error('Failed to register user. Please try again.');
+        
 
 
     }
@@ -81,7 +87,11 @@ const Register = () => {
 
 
     return (
-        <div className="bg-[#FFF7F0] mt-10 rounded-xl container mx-auto hero-content flex-col">
+        <div className="bg-[#FFF7F0] mb-6 mt-10 rounded-xl container mx-auto hero-content flex-col">
+
+            <Helmet>
+                <title>Home Hive | Register </title>
+            </Helmet>
 
             <h2 className="text-4xl mt-8   text-center poppins-bold ">Please Register Here</h2>
 

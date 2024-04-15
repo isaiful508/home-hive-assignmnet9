@@ -3,6 +3,8 @@ import { FaGoogle, FaGithub } from "react-icons/fa6";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { Helmet } from "react-helmet-async";
+import toast from 'react-hot-toast';
 
 
 
@@ -10,10 +12,11 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 const Login = () => {
-    
-    const {user, setUser} = useState(null);
+
 
     const { googleLogin, githubLogin } = useContext(AuthContext);
+
+    const [user, setUser] = useState(null);
 
     const [showPassword, setShowPassword] = useState(false);
 
@@ -21,8 +24,6 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate()
     // console.log('in login page location',location);
-
-
 
 
     const handleLogin = e => {
@@ -36,10 +37,13 @@ const Login = () => {
 
         logIn(email, password)
             .then(result => {
-                console.log(result.user);
+                console.log(result.user)
+                
+                toast.success("Login Successfully")
+                
+                navigate(location?.state ? location.state : '/');
 
                 //navigate after login
-                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 console.error(error)
@@ -55,7 +59,12 @@ const Login = () => {
 
     const handleGoogleLogin = () => {
         googleLogin()
-            .then(result => setUser(result.user))
+            .then(result => {
+                setUser(result.user)
+                toast.success("Login Successfully")
+
+                navigate(location?.state ? location.state : '/');
+            })
             .catch(error => console.error(error))
 
     }
@@ -64,12 +73,15 @@ const Login = () => {
 
     const handleGithubLogin = () => {
         githubLogin()
-        .then(result => {
-            setUser(result.user)
-            .catch(error => {
-                console.error(error)
-            })
-        })
+            .then(result => {
+                setUser(result.user)
+                toast.success("Login Successfully")
+
+                navigate(location?.state ? location.state : '/');
+                })
+                .catch(error => {
+                    console.error(error)
+                })
     }
 
 
@@ -77,7 +89,11 @@ const Login = () => {
 
     return (
 
-        <div className="bg-[#FFF7F0] mt-10 rounded-xl container mx-auto hero-content flex-col">
+        <div className="bg-[#FFF7F0] mb-6 mt-10 rounded-xl container mx-auto hero-content flex-col">
+
+            <Helmet>
+                <title>Home Hive | Login </title>
+            </Helmet>
 
             <h2 className="text-4xl mt-8   text-center poppins-bold ">Please Login Here</h2>
 
@@ -144,7 +160,7 @@ const Login = () => {
 
             </form>
 
-
+            
         </div>
     );
 };

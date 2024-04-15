@@ -1,11 +1,15 @@
 
+import { Helmet } from "react-helmet-async";
 import { FaBuilding } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdCall } from "react-icons/md";
 
 const ContactUs = () => {
     return (
-        <div className="container rounded-md bg-[#FFF7F0] mx-auto flex flex-col-reverse lg:flex-row items-center">
+        <div className="container mb-6 rounded-md bg-[#FFF7F0] mx-auto flex flex-col-reverse lg:flex-row items-center">
+            <Helmet>
+                <title>Home Hive | Contact Us </title>
+            </Helmet>
 
             <div className="  dark:bg-gray-900">
                 <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">

@@ -13,7 +13,11 @@ const SingleCard = ({ card }) => {
 
 
     return (
-        <div className="card w-96 bg-[#FFF7F0] shadow-lg">
+        <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-anchor-placement="center-bottom"
+            className="card w-96 bg-[#FFF7F0] shadow-lg">
 
             <figure className="mt-5 ">
                 <img className="rounded-lg" src={image} alt="property" />
@@ -38,7 +42,7 @@ const SingleCard = ({ card }) => {
                 }
 
                 <div className="card-actions">
-                    <Link to={`/card_property_details/${id}`} className="btn poppins-regular rounded-full text-white bg-gradient-to-r from-[#FD650B] to-[#FFB400] ">View Property</Link>
+                    <Link to={`/card_property_details/${id}`} className="btn poppins-regular rounded- text-white bg-gradient-to-r from-[#FD650B] to-[#FFB400] ">View Property</Link>
                 </div>
             </div>
         </div>
