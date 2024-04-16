@@ -6,7 +6,10 @@ import { Helmet } from "react-helmet-async";
 const UserProfile = () => {
     const { user } = useContext(AuthContext)
     return (
-        <div className="card mb-6 mx-auto mt-10 text-center w-96 border-2 border-[] bg-[#FFF7F0] shadow-xl">
+        <div
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        className="card  mb-6 mx-auto mt-10 text-center w-96 border-2 border-[] bg-[#FFF7F0] shadow-xl">
 
             <Helmet>
                 <title>Home Hive | User Profile </title>

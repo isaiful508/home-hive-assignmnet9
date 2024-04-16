@@ -20,6 +20,7 @@ const Navbar = () => {
     return (
         <div
         data-aos="fade-down"
+        data-aos-duration="1000"
         className="navbar  container mx-auto mt-4">
             <div className="navbar-start">
                 <div className="dropdown">
@@ -43,7 +44,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <img src={logo} alt="" />
-                <Link to='/' className="btn btn-ghost poppins-bold text-3xl ">Home <span className="text-[#FD650B]">Hive</span></Link>
+                <Link to='/' className="btn btn-ghost lg:flex hidden poppins-bold text-3xl ">Home <span className="text-[#FD650B]">Hive</span></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu flex items-center space-x-6 menu-horizontal px-1">

@@ -89,7 +89,10 @@ const Login = () => {
 
     return (
 
-        <div className="bg-[#FFF7F0] mb-6 mt-10 rounded-xl container mx-auto hero-content flex-col">
+        <div
+        data-aos="flip-up"
+        data-aos-duration="1000"
+         className="bg-[#FFF7F0] mb-6 mt-10 rounded-xl container mx-auto hero-content flex-col">
 
             <Helmet>
                 <title>Home Hive | Login </title>

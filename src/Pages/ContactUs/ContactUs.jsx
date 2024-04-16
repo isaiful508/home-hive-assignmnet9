@@ -6,7 +6,10 @@ import { MdCall } from "react-icons/md";
 
 const ContactUs = () => {
     return (
-        <div className="container mb-6 rounded-md bg-[#FFF7F0] mx-auto flex flex-col-reverse lg:flex-row items-center">
+        <div
+        data-aos="fade-up"
+        data-aos-duration="1500"
+         className="container mb-6 rounded-md bg-[#FFF7F0] mx-auto flex flex-col-reverse lg:flex-row items-center">
             <Helmet>
                 <title>Home Hive | Contact Us </title>
             </Helmet>

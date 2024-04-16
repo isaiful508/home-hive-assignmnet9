@@ -5,7 +5,7 @@ const NewsLetter = () => {
         <div
         data-aos="flip-up"
         data-aos-duration="1000"
-        className='w-full container mx-auto rounded-xl py-16 mb-10 text-black bg-[#FFF7F0] px-4'>
+        className='lg:w-full w-96 container mx-auto rounded-xl py-16 mb-10 text-black bg-[#FFF7F0] px-4'>
             <div className='max-w-[1240px] mx-auto grid lg:grid-cols-3'>
                 <div className='lg:col-span-2 my-4'>
                     <h1 className='md:text-4xl sm:text-3xl text-2xl poppins-semibold py-2'>

@@ -5,8 +5,8 @@ const Footer = () => {
         <footer
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
-            data-aos-duration="1000"
-            className="footer text-black p-10 bg-[#FFF7F0]">
+            data-aos-duration="2000"
+            className="footer lg:w-full w-96  text-black p-10 bg-[#FFF7F0]">
             <aside>
                 <img src={logo} alt="" />
                 <p className='poppins-medium'>Home Hive Industries Ltd.<br />Providing reliable tech since 1992</p>
