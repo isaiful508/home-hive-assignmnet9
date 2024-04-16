@@ -26,7 +26,7 @@ const Cards = () => {
                 <p className="poppins-regular mt-4">Find your ideal property – for sale or rent. Explore our diverse listings <br /> and discover the perfect place to call home.</p>
             </div>
 
-            <div className=" grid gap-5 grid-cols-1 lg:grid-cols-3">
+            <div className=" grid  md:gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
                 {
                     propertyCards.map(card => <SingleCard

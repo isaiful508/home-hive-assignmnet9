@@ -8,7 +8,7 @@ const ClientReviews = () => {
      data-aos-duration="2000"
         className='container mx-auto'>
             <section className="my-24 flex flex-col lg:flex-row gap-12 rounded-xl bg-gradient-to-r from-[#FD650B] to-[#FFB400] lg
-            lg:px-16 p-12 lg:py-24 w-96 lg:w-full">
+            lg:px-16 p-12 lg:py-24 w-96 md:w-full lg:w-full">
 
                 <div className="flex items-center lg:pr-28">
                     <div className="space-y-5">

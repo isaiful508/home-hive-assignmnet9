@@ -17,6 +17,7 @@ const Login = () => {
     const { googleLogin, githubLogin } = useContext(AuthContext);
 
     const [user, setUser] = useState(null);
+    const [loginError, setLoginError] = useState("");
 
     const [showPassword, setShowPassword] = useState(false);
 
@@ -35,6 +36,8 @@ const Login = () => {
         const password = form.get('password');
         console.log(email, password);
 
+        setLoginError("")
+
         logIn(email, password)
             .then(result => {
                 console.log(result.user)
@@ -47,6 +50,14 @@ const Login = () => {
             })
             .catch(error => {
                 console.error(error)
+
+                if (error.code === "auth/invalid-credential" || error.code === "auth/user-not-found") {
+                    // Show error message for incorrect email or password
+                    setLoginError("Incorrect email or password. Please try again.");
+                }
+            
+
+
             })
 
     }
@@ -132,6 +143,12 @@ const Login = () => {
                     </label>
 
                 </div>
+
+
+                {
+                    loginError && <p className="text-red-700 poppins-medium">{loginError}</p>
+                }
+
 
                 <div className="form-control mt-6">
                     <button className="btn btn-primary text-white bg-[#FD650B] outline-none ">Login</button>

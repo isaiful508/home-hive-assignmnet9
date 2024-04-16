@@ -1,3 +1,30 @@
+# Home Hive Real Estate Website
+
+[Live Site](https://www.example.com)
+
+## Features and Characteristics
+
+- Modern and intuitive user interface.
+- Real-time property listings with detailed information.
+- Responsive design for seamless browsing on all devices.
+- User-friendly navigation and explore functionality.
+- Secure authentication system for user accounts.
+
+## NPM Packages Used
+
+- AOS (Animate On Scroll) Package
+- Swiper Slide
+- Animate.css
+
+
+
+
+
+
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

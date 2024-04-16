@@ -27,7 +27,7 @@ const Navbar = () => {
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52">
+                    <ul  tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52">
 
                         <NavLink to='/'
                             className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Home</NavLink>
@@ -43,23 +43,23 @@ const Navbar = () => {
 
                     </ul>
                 </div>
-                <img src={logo} alt="" />
-                <Link to='/' className="btn btn-ghost lg:flex hidden poppins-bold text-3xl ">Home <span className="text-[#FD650B]">Hive</span></Link>
+                <img className="animate__animated hover:animate__shakeX" src={logo} alt="" />
+                <Link to='/' className="btn btn-ghost md:flex lg:flex hidden poppins-bold text-3xl animate__animated hover:animate__fadeInDown">Home <span className="text-[#FD650B]">Hive</span></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu flex items-center space-x-6 menu-horizontal px-1">
+                <ul className="menu flex items-center space-x-6 menu-horizontal px-1 ">
 
                     <NavLink to='/'
-                        className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Home</NavLink>
+                        className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 animate__animated hover:animate__flash border-[#FD650B]' : 'poppins-regular animate__animated hover:animate__flash'}>Home</NavLink>
 
                     <NavLink to='/contactUs'
-                        className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Contact Us</NavLink>
+                        className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B] animate__animated hover:animate__flash' : 'poppins-regular animate__animated hover:animate__flash'}>Contact Us</NavLink>
 
                     <NavLink to='/updateProfile'
-                        className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>Update Profile</NavLink>
+                        className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B] animate__animated hover:animate__flash' : 'poppins-regular animate__animated hover:animate__flash'}>Update Profile</NavLink>
 
                     <NavLink to='/user_profile'
-                        className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B]' : 'poppins-regular'}>User Profile</NavLink>
+                        className={({ isActive }) => isActive ? 'text-[#FD650B] poppins-medium rounded-lg border-2 p-2 border-[#FD650B] animate__animated hover:animate__flash' : 'poppins-regular animate__animated hover:animate__flash'}>User Profile</NavLink>
 
                 </ul>
             </div>
