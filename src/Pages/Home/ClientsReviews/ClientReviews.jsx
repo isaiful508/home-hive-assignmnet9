@@ -24,7 +24,7 @@ const ClientReviews = () => {
                 <div className="relative">
                     {/* next review */}
                     <div className="relative z-10 mb-16 opacity-40 p-10 rounded-lg bg-white">
-                        <img className="absolute -left-5 -top-4 border-4 border-white rounded-full bg-white" src={"https://i.ibb.co/ZWy6gKH/client.png"} alt="" />
+                        <img className="absolute w-[70px] -left-5 -top-4 border-4 border-white rounded-full bg-white" src={"https://i.ibb.co/ZWy6gKH/client.png"} alt="" />
                         <p className="poppins-regular">Exceptional service, surpassed expectations. Highly recommended for their professionalism and expertise. A pleasure to work with</p>
                         <h4 className="mt-5 font-bold">Ilham Yuda</h4>
                         <p className="font-medium">Businessman</p>
@@ -35,7 +35,7 @@ const ClientReviews = () => {
 
                     {/* current review */}
                     <div className="absolute z-20 top-40 lg:-left-28 lg:w-[430px] p-10 rounded-lg bg-white">
-                        <img className="absolute -left-5 -top-4 border-4 border-white rounded-full bg-white" src={"https://i.ibb.co/ZWy6gKH/client.png"} alt="" />
+                        <img className="absolute w-[70px] -left-5 -top-4 border-4 border-white rounded-full bg-white" src={"https://i.ibb.co/stYKWSc/client1.png"} alt="" />
                         <p className="poppins-regular">Efficient and reliable team. Smooth process from start to finish. Exceeded our expectations. Highly recommend their services.</p>
                         <h4 className="mt-5 font-bold">Sarah Islam</h4>
                         <p className="font-medium">CEO of KF</p>
@@ -46,7 +46,7 @@ const ClientReviews = () => {
 
                     {/* previous review */}
                     <div className="relative z-10 opacity-40 p-10 rounded-lg bg-white">
-                        <img className="absolute -left-5 -top-4 border-4 border-white rounded-full bg-white" src={"https://i.ibb.co/ZWy6gKH/client.png"} alt="" />
+                        <img className="absolute w-[70px] -left-5 -top-4 border-4 border-white rounded-full bg-white" src={"https://i.ibb.co/6Xf1QjY/clienst2.jpg"} alt="" />
                         <p className="poppins-regular">Outstanding professionalism and expertise. Seamless process and excellent service. Highly recommend for anyone seeking top-quality real estate assistance.</p>
                         <h4 className="mt-5 font-bold">Mickle Joseph</h4>
                         <p className="font-medium">Govt. Service Holder </p>

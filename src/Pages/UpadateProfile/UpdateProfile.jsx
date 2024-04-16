@@ -79,7 +79,7 @@ const UpdateProfile = () => {
                 </div>
 
                 <div className="form-control mt-6">
-                    <button onClick={handleUpdateProfile} className="btn btn-primary text-white bg-[#FD650B] outline-none ">Save</button>
+                    <button onClick={handleUpdateProfile} className="btn btn-primary text-white bg-gradient-to-r from-[#FD650B] to-[#FFB400] outline-none ">Save</button>
 
                     <p className="text-center mt-2 poppins-medium">Do not Have An Account ? <Link className="text-red-500" to='/register'>Please Register</Link></p>
 

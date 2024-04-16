@@ -1,6 +1,7 @@
 # Home Hive Real Estate Website
 
-[Live Site](https://www.example.com)
+[Live Site(Firebase)](https://homehive-assignmnet9-auth.web.app/)
+[Live Site(Surge)](https://round-wing.surge.sh/)
 
 ## Features and Characteristics
 

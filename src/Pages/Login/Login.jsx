@@ -151,7 +151,7 @@ const Login = () => {
 
 
                 <div className="form-control mt-6">
-                    <button className="btn btn-primary text-white bg-[#FD650B] outline-none ">Login</button>
+                    <button className="btn btn-primary text-white bg-gradient-to-r from-[#FD650B] to-[#FFB400] outline-none ">Login</button>
 
 
                     <div className="p-2 mt-6  mb-4 flex justify-center flex-col items-center " >
